@@ -1,0 +1,1 @@
+# luiza-freedom-feature-wishlist
