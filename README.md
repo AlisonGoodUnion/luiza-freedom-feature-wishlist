@@ -1,6 +1,6 @@
 # luiza-freedom-feature-wishlist
 
-### Freedom - Teste Backend
+### Freedom - Teste Backend:
     Objetivo do projeto é desenvolver uma feature de Wishlist, desafio proposto pelo time freedom. 
 
 Serviço  de Wishlist
@@ -18,3 +18,16 @@ Serviço  de Wishlist
     - Consultar todos os produtos da Wishlist do cliente;
     - Consultar se um determinado produto está na Wishlist do
     cliente;
+
+
+## Dicas de utilizacao do projeto:
+
+    - Instalar JDK, Docker
+    - Start MongoDB docker-compose: docker-compose -f docker-compose.yml up
+        Dica: executar em algum prompt ou pelo próprio painel do docker.
+    - Executar projeto springboot.
+
+#### API DOC:
+http://localhost:8080/swagger-ui/index.html
+       
+
