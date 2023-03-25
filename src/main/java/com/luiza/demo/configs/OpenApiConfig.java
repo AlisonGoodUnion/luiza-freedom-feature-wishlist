@@ -14,7 +14,7 @@ public class OpenApiConfig {
                 .info(new Info()
                         .title("Wishlist API")
                         .version("1.0.0")
-                        .description("Serviço utilizado para gerenciamento de Wishlist(lista de desejos) do cliente"));
+                        .description("Service used for Wishlist management"));
     }
 }
 
