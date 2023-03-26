@@ -10,7 +10,7 @@ import java.util.Collection;
 import java.util.Collections;
 
 @RestController
-@RequestMapping("/v1/customers}")
+@RequestMapping("/v1/customers")
 public class CustomerWishlistQueryControllerImpl implements CustomerWishlistQueryController {
 
     @Override
@@ -20,7 +20,7 @@ public class CustomerWishlistQueryControllerImpl implements CustomerWishlistQuer
     }
 
     @Override
-    @GetMapping("/{id}/wishlists/{idProduct}")
+    @GetMapping("/{id}/wishlists/products/{idProduct}")
     public Product getProduct(
             @PathVariable(name = "id") String idCustomer,
             @PathVariable(name = "idProduct") String idProduct) {

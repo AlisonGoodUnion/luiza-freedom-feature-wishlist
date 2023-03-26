@@ -12,6 +12,5 @@ public class Product {
     @Id
     private String id;
     private String description;
-    private long price;
-    private long quantity;
+    private double price;
 }

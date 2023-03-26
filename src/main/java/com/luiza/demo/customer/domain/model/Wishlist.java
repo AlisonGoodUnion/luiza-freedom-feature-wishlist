@@ -18,4 +18,5 @@ public class Wishlist {
     private Customer customer;
     @DBRef
     private List<Product> products;
+    private int quantity;
 }

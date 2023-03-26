@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/v1/customers}")
+@RequestMapping("/v1/customers")
 public class CustomerWishlistMaintainControllerImpl implements CustomerWishlistMaintainController {
 
     @Override
