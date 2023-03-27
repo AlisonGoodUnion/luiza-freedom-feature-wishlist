@@ -1,16 +1,19 @@
-package com.luiza.demo.customer.domain.model;
+package com.luiza.demo.product.domain.model;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Getter
 @AllArgsConstructor
-@Document
+@Data
 public class Product {
     @Id
     private String id;
     private String description;
     private double price;
+    private int quantity;
+
+    public void addQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 }

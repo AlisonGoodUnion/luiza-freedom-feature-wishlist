@@ -1,6 +1,6 @@
-package com.luiza.demo.customer.presentation;
+package com.luiza.demo.product.presentation;
 
-import com.luiza.demo.customer.domain.model.Product;
+import com.luiza.demo.product.domain.model.Product;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -11,7 +11,7 @@ import org.springframework.http.MediaType;
 import java.util.List;
 
 
-@Tag(name = "Products", description = "Service used to consult products")
+@Tag(name = "Products", description = "Service used to obtain products")
 public interface ProductQueryController {
 
     @Operation(summary = "Get all the products")

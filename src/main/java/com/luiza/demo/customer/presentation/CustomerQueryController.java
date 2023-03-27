@@ -12,7 +12,7 @@ import org.springframework.http.MediaType;
 import java.util.List;
 
 
-@Tag(name = "Customers", description = "Service used to consult customers")
+@Tag(name = "Customers", description = "Service used to query customers")
 public interface CustomerQueryController {
 
     @Operation(summary = "Get all the customer's")
