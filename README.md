@@ -40,10 +40,6 @@ http://localhost:8080/swagger-ui/index.html
 #### Classes de serviço que representam o domínio. [service]
 #### Classes de acesso a dados. [infrastructure]
 #### Classes de acesso a dados externos. [client]
-#### Classes de acesso a dados banco. [persistence]
-#### Classes responsáveis pelas operações na API. [presentation]
-#### Classes de acesso a dados. [infrastructure]
+#### Classes responsáveis pelas operações do cliente. [presentation]
 #### Classes responsáveis pelas operações em banco. [persistence]
-#### Solicitações de operações HTTP [presentation]
-
 
