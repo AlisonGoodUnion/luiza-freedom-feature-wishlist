@@ -24,7 +24,7 @@ public class CustomerWishlistMaintainControllerImpl implements CustomerWishlistM
     public ResponseEntity<Wishlist> addProduct(
             @PathVariable(name = "id") final String idCustomer,
             @RequestBody WishlistRequestDto wishlistRequestDto
-    ) throws Exception {
+    ) {
         return ResponseEntity.status(HttpStatus.CREATED).body(
                 customerWishlistMaintainService.addProduct(
                         idCustomer,

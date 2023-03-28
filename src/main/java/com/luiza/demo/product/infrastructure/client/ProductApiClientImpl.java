@@ -1,5 +1,6 @@
 package com.luiza.demo.product.infrastructure.client;
 
+import com.luiza.demo.exception.customexception.ResourceNotFoundException;
 import com.luiza.demo.product.domain.model.Product;
 import org.springframework.stereotype.Service;
 
@@ -19,11 +20,15 @@ public class ProductApiClientImpl implements ProductApiClient {
 
     @Override
     public Product findById(final String idProduct) {
+        return getProduct(idProduct);
+    }
+
+    private static Product getProduct(String idProduct) {
         return getProducts().stream()
                 .filter(product -> product.getId().equals(idProduct))
                 .findFirst()
                 .orElseThrow(() ->
-                        new IllegalArgumentException("The server found nothing that matches the values used in the query")
+                        new ResourceNotFoundException("Product does not exist")
                 );
     }
 

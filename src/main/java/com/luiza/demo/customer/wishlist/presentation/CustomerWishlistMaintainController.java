@@ -19,29 +19,26 @@ public interface CustomerWishlistMaintainController {
             @ApiResponse(responseCode = "201",
                     description = "add product to the wishlist",
                     content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)),
-            @ApiResponse(responseCode = "400",
-                    description = "Bad request",
-                    content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)),
             @ApiResponse(responseCode = "404",
-                    description = "Wishlist not found",
+                    description = "Customer or Product does not exist or invalid quantity",
+                    content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)),
+            @ApiResponse(responseCode = "422",
+                    description = "Domain Business Exception",
                     content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE))
     })
     ResponseEntity<Wishlist> addProduct(
             @Parameter(description = "Customer ID") final String idCustomer,
             @RequestBody WishlistRequestDto wishlistRequestDto
-    ) throws Exception;
+    );
 
     @Operation(summary = "Remove produt from customer's wishlist")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200",
                     description = "remove product to the wishlist",
                     content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)),
-            @ApiResponse(responseCode = "400",
-                    description = "Bad request",
-                    content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)),
             @ApiResponse(responseCode = "404",
-                    description = "product not found",
-                    content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE))
+                    description = "Customer does not exist",
+                    content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)),
     })
     ResponseEntity<Wishlist> removeProduct(
             @Parameter(description = "Customer ID") final String idCustomer,

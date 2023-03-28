@@ -20,12 +20,9 @@ public interface CustomerWishlistQueryController {
             @ApiResponse(responseCode = "200",
                     description = "Obtain all the products",
                     content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)),
-            @ApiResponse(responseCode = "400",
-                    description = "Bad request",
-                    content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)),
             @ApiResponse(responseCode = "404",
-                    description = "Wishlist not found",
-                    content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE))
+                    description = "Wishlist does not exist",
+                    content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)),
     })
     ResponseEntity<List<Product>> getAllProducts(@Parameter(description = "Customer ID") final String idCustomer);
 
@@ -34,11 +31,8 @@ public interface CustomerWishlistQueryController {
             @ApiResponse(responseCode = "200",
                     description = "Obtain the customer's wishlist product",
                     content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)),
-            @ApiResponse(responseCode = "400",
-                    description = "Bad request",
-                    content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)),
             @ApiResponse(responseCode = "404",
-                    description = "The server found nothing that matches the values used in the query",
+                    description = "Wishlist does not exist",
                     content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE))
     })
     ResponseEntity<Product> getOneProduct(

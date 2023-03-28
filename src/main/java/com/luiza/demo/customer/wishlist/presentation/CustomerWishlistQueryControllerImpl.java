@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/v1/customers")
@@ -26,9 +25,8 @@ public class CustomerWishlistQueryControllerImpl implements CustomerWishlistQuer
     @Override
     @GetMapping("/{id}/wishlists/products")
     public ResponseEntity<List<Product>> getAllProducts(@PathVariable(name = "id") final String idCustomer) {
-        Optional<List<Product>> wishlist = this.customerWishlistQueryService.getAllProducts(idCustomer);
-        return wishlist.map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.noContent().build());
+        List<Product> products = this.customerWishlistQueryService.getAllProducts(idCustomer);
+        return ResponseEntity.ok(products);
     }
 
     @Override
@@ -36,9 +34,7 @@ public class CustomerWishlistQueryControllerImpl implements CustomerWishlistQuer
     public ResponseEntity<Product> getOneProduct(
             @PathVariable(name = "id") String idCustomer,
             @PathVariable(name = "idProduct") String idProduct) {
-
-        Optional<Product> product = this.customerWishlistQueryService.getOneProduct(idCustomer, idProduct);
-        return product.map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.noContent().build());
+        Product product = this.customerWishlistQueryService.getOneProduct(idCustomer, idProduct);
+        return ResponseEntity.ok(product);
     }
 }

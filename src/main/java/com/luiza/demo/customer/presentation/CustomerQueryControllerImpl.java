@@ -3,12 +3,11 @@ package com.luiza.demo.customer.presentation;
 import com.luiza.demo.customer.domain.model.Customer;
 import com.luiza.demo.customer.infrastructure.client.CustomerApiClient;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -25,16 +24,13 @@ public class CustomerQueryControllerImpl implements CustomerQueryController {
 
     @GetMapping("")
     @Override
-    public List<Customer> getAll() {
-        return customerApiClient.findAll();
+    public ResponseEntity<List<Customer>> getAll() {
+        return ResponseEntity.ok(customerApiClient.findAll());
     }
 
     @GetMapping("/{id}")
     @Override
-    public Customer getOne(@PathVariable(name = "id") final String idCustomer) {
-        return customerApiClient.findById(idCustomer)
-                .orElseThrow(() ->
-                        new ResponseStatusException(HttpStatus.NOT_FOUND, "The server found nothing that matches the values used in the query")
-                );
+    public ResponseEntity<Customer> getOne(@PathVariable(name = "id") final String idCustomer) {
+        return ResponseEntity.ok(customerApiClient.findById(idCustomer));
     }
 }
