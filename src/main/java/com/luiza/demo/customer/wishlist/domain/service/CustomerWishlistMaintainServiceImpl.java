@@ -65,7 +65,7 @@ public class CustomerWishlistMaintainServiceImpl implements CustomerWishlistMain
     }
 
     private void quantityValidation(int quantity) {
-        if (quantity < 0 || quantity > 999) {
+        if (quantity <= 0 || quantity > 999) {
             throw new ResourceNotFoundException("Invalid Quantity");
         }
     }

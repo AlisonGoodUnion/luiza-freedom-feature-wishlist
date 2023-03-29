@@ -34,7 +34,7 @@ class CustomerWishlistQueryControllerImplTest extends IntegrationTest {
         this.getCustomerWishlistRepository().save(wishlistMock);
     }
 
-    @DisplayName("Given Customer's have products into Wishlist" +
+    @DisplayName("Given Customer's have Products into Wishlist" +
             "When realise some request " +
             "Then return all Customer's Products")
     @Test
@@ -61,7 +61,7 @@ class CustomerWishlistQueryControllerImplTest extends IntegrationTest {
 
     @DisplayName("Given Customer's have one product into Wishlist" +
             "When Customer need only one Product " +
-            "Then return one customer's Product")
+            "Then return one Sustomer's Product")
     @Test
     void getCustomerWishlistOneProduct() throws Exception {
         String URI = "/v1/customers/{id}/wishlists/products/{idProduct}";
@@ -107,7 +107,7 @@ class CustomerWishlistQueryControllerImplTest extends IntegrationTest {
     }
 
     @DisplayName("Given Wishlist does not exist the Products " +
-            "When Customer obtain one Product" +
+            "When Customer obtain one Product " +
             "Then return error message")
     @Test
     void getCustomerWishlistProductException() throws Exception {

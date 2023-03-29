@@ -32,7 +32,7 @@ public class CustomerWishlistMaintainControllerImpl implements CustomerWishlistM
                         wishlistRequestDto.getQuantity()));
     }
 
-    @DeleteMapping("{id}/wishlists/products{idProduct}")
+    @DeleteMapping("{id}/wishlists/products/{idProduct}")
     @Override
     public ResponseEntity<Wishlist> removeProduct(
             @PathVariable(name = "id") final String idCustomer,

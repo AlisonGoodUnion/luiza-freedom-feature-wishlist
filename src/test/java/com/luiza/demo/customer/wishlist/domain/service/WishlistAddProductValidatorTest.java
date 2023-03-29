@@ -4,6 +4,7 @@ import com.luiza.demo.config.UnitTest;
 import com.luiza.demo.customer.wishlist.domain.model.Wishlist;
 import com.luiza.demo.exception.customexception.DomainBusinessException;
 import com.luiza.demo.product.ProductDataProvider;
+import com.luiza.demo.product.domain.model.Product;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -20,7 +21,9 @@ class WishlistAddProductValidatorTest extends UnitTest {
     private WishlistAddProductValidator wishlistAddProductValidator;
 
     @Test
-    @DisplayName("Given Wishlist When There one Product Then should not return exception")
+    @DisplayName("Given Wishlist " +
+            "When There one Product " +
+            "Then should not return Exception")
     void sucessValidation() {
         Wishlist wishlistMock = Wishlist.builder()
                 .products(List.of(ProductDataProvider.getProduct()))
@@ -33,7 +36,9 @@ class WishlistAddProductValidatorTest extends UnitTest {
     }
 
     @Test
-    @DisplayName("Given Wishlist and idProduct When the parametes is null Then Exception")
+    @DisplayName("Given Wishlist and idProduct " +
+            "When the parametes is null " +
+            "Then return Exception")
     void invalidParametersValidation() {
         IllegalArgumentException domainBusinessException = Assertions.assertThrows(IllegalArgumentException.class, () -> {
             this.wishlistAddProductValidator.accept(null, null);
@@ -43,8 +48,12 @@ class WishlistAddProductValidatorTest extends UnitTest {
     }
 
     @Test
-    @DisplayName("Given Wishlist When With Max Products Then Exception")
+    @DisplayName("Given Wishlist " +
+            "When With Max Products " +
+            "Then return Exception")
     void maxLimitValidation() {
+        List<Product> products = ProductDataProvider.getProducts();
+
         Wishlist wishlistMock = Wishlist.builder()
                 .products(ProductDataProvider.getProducts())
                 .build();
@@ -58,7 +67,9 @@ class WishlistAddProductValidatorTest extends UnitTest {
     }
 
     @Test
-    @DisplayName("Given Wishlist When The Product already on wishlist Then Exception")
+    @DisplayName("Given Wishlist " +
+            "When The Product already on ishlist " +
+            "Then return Exception")
     void productAlreadyOn() {
         Wishlist wishlistMock = Wishlist.builder()
                 .products(List.of(ProductDataProvider.getProduct()))

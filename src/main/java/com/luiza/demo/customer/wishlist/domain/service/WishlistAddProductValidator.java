@@ -18,7 +18,7 @@ public class WishlistAddProductValidator {
             throw new IllegalArgumentException("Invalid parameters");
         }
 
-        if (wishlist.getProducts().size() > MAX_LIMIT) {
+        if (wishlist.getProducts().size() >= MAX_LIMIT) {
             throw new DomainBusinessException("Exceeded product limit we can add only 20 products");
         }
 
