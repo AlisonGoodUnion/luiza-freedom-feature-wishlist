@@ -11,6 +11,10 @@ public class ProductDataProvider {
         return new Product("507f1f77bcf86cd799439010", "Keyboard", 1.60, 1);
     }
 
+    public static Product getProduct2() {
+        return new Product("507f1f77bcf86cd799439011", "Laptop computer", 1.70, 1);
+    }
+
     public static List<Product> getProducts() {
         List<Product> products = new ArrayList<>();
         products.add(new Product("507f1f77bcf86cd799439010", "Keyboard", 1.60, 1));

@@ -21,7 +21,7 @@ public class Wishlist {
     private List<Product> products;
 
     public void addProduct(Product product) {
-        products.add(product);
+        this.products.add(product);
     }
 
     public void removeProduct(String idProduct) {

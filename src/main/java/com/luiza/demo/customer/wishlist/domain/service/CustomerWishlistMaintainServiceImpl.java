@@ -44,7 +44,7 @@ public class CustomerWishlistMaintainServiceImpl implements CustomerWishlistMain
         }
 
         Wishlist wishlistEntidy = wishlistEntityOptional.get();
-        wishlistAddProductValidator.accept(wishlistEntidy, idProduct);
+        this.wishlistAddProductValidator.accept(wishlistEntidy, idProduct);
 
         return addProduct(idProduct, quantity, wishlistEntidy);
     }
@@ -96,6 +96,4 @@ public class CustomerWishlistMaintainServiceImpl implements CustomerWishlistMain
 
         return this.customerWishlistRepository.save(wishlist);
     }
-
-
 }
